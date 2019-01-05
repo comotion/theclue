@@ -1,0 +1,28 @@
+This is comotion's linux port of The Clue! Open Source Project.
+
+The Clue! is a 1996 burglary-planning game with unique gameplay
+unavailable in games to date.
+
+In The Clue! you must find the right crew, tools and cars, stake out buildings and plan the perfect heist.
+
+Requirements: libSDL
+(apt install libsdl2-dev)
+
+On any recent platform, you should be able to run 'make' to build 'theclue' binary.
+
+To run the game you will need the following folders from the Windows release:
+AUDIO
+DATA
+DATADISK
+PICTURES
+SAMPLES
+SOUNDS
+TEXTS
+
+data zip file download:
+https://sourceforge.net/projects/cosp/files/Open%20SDL%20Port/0.7/cosp-0.7-win32-std-english-%28with_german_voice%29.zip/download
+
+Some links to The Clue! resources:
+
+The Clue Open Source Project: https://cosp.sourceforge.net/
+http://www.abandonia.com/en/games/429/Clue%21%2C+The.html
