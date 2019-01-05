@@ -44,10 +44,10 @@ typedef unsigned long	ulong;
 
 #define EOS 	 ((char)'\0')
 
-#if _MSC_VER
-// defines for Visual C++
 #define max(a,b)    (((a) > (b)) ? (a) : (b))
 #define min(a,b)    (((a) < (b)) ? (a) : (b))
+#if _MSC_VER
+// defines for Visual C++
 #define __func__	__FUNCTION__
 #endif
 
