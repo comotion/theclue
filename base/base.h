@@ -103,4 +103,5 @@ extern void *StdBuffer0, *StdBuffer1;
 extern void tcClearStdBuffer(void *p_Buffer);
 extern void tcSetPermanentColors(void);
 
+int SDL_main(int, char**);
 #endif
