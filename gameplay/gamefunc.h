@@ -15,6 +15,7 @@
 
 struct StoryHeader
 {
+#pragma pack
 	ubyte StoryName[20];
 
 	ulong EventCount;	/* Zaehler mit der h”chsten EventNr */
@@ -43,6 +44,7 @@ struct NewStory
 
 struct NewScene
 {
+#pragma pack
 	ulong	EventNr;
 	ubyte	SceneName[20];
 

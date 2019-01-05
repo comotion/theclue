@@ -401,6 +401,8 @@ void PrepareStory(char *filename)
 
 	file = dskOpen(pathname, "rb", 0);
 
+	dskRead(file, &SH, sizeof(SH));
+    /*
 	dskRead(file, SH.StoryName, sizeof(SH.StoryName));
 	dskRead(file, &SH.EventCount,sizeof(ulong));
 	dskRead(file, &SH.SceneCount,sizeof(ulong));
@@ -411,6 +413,7 @@ void PrepareStory(char *filename)
 	dskRead(file, &SH.StartZeit,sizeof(ulong));
 	dskRead(file, &SH.StartOrt,sizeof(ulong));
 	dskRead(file, &SH.StartSzene,sizeof(ulong));
+    */
 
 	EndianL(&SH.EventCount);
 	EndianL(&SH.SceneCount);
