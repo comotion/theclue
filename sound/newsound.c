@@ -19,6 +19,11 @@
 
 #include "sound/mxr.h"
 
+#include <string.h>
+#include <stdlib.h>
+#ifndef WIN32
+#define stricmp strcasecmp
+#endif
 char currSoundName[256];
 
 int currMusicVolume = 0;

@@ -10,6 +10,10 @@
 
 // cheat function
 #include "base/fullenv.c"
+#include <string.h>
+#ifndef WIN32
+#define stricmp strcasecmp
+#endif
 
 Configuration_t Config;
 
