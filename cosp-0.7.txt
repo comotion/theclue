@@ -1,4 +1,4 @@
-Der Clou! Open Source Project V0.7 (2018-09-25)
+Der Clou! Open Source Project V0.8 (2019-01-05)
 
 http://sourceforge.net/projects/cosp
 
@@ -16,6 +16,7 @@ SDL conversion:  Oliver Gantert (LucyG)
 Contributions:   Baris Elmas (devkid82)
                  Ronny Thiemann (templer)
                  Thomas Trummer (LordSkaven)
+                 Kacper Wysocki (comotion) - native linux port
 Playtesting:     Baris Elmas (devkid82) - first to finish German version
                  Martin Banas (srandista) - first to finish Czech version
                  Neno - bug reporter
@@ -31,6 +32,9 @@ license contained in the included 'mame.txt' file.
 ================================================================================
   CHANGES/FIXES
 ================================================================================
+
+v0.8 (2019-01-05)
+- linux port
 
 v0.7 (2018-09-25)
 - fix: removed the experimental audio delay fake stereo effect

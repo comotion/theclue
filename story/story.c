@@ -81,17 +81,20 @@ void tcDoneHotelReception(void)
 {
 	Person      rig = (Person) dbGetObject(Person_Ben_Riggley);
 	Environment env = (Environment) dbGetObject(Environment_TheClou);
+	ubyte choice, evaluation;
 
 	knowsSet(Person_Matt_Stuvysunt, Person_Ben_Riggley);
 
-	if (env->MattHasHotelRoom==2)  /* er hat es bereits ! */
+	if (env->MattHasHotelRoom==2) {
+		/* er hat es bereits ! */
 		SceneArgs.ReturnValue = SCENE_HOTEL;
+	}
 	else
-	    {
+	{
 		AddTaxiLocation(2);      /* watling */
 		AddTaxiLocation(1);      /* cars */
 
-		if (tcGetPlayerMoney>=tcCOSTS_FOR_HOTEL)
+		if (tcGetPlayerMoney >= tcCOSTS_FOR_HOTEL)
 		{
 			Say(STORY_0_TXT,0,MATT_PICTID,"THE_KEY_PLEASE");
 			Say(STORY_0_TXT,0,rig->PictID,"I_LL_FETCH_THE_KEY");
@@ -104,10 +107,11 @@ void tcDoneHotelReception(void)
 			SceneArgs.ReturnValue = SCENE_HOTEL_ROOM;
 		}
 		else
-		    {
+		{
 			if (env->MattHasHotelRoom == 0)     /* 1. mal da */
 			{
-				ubyte choice = 2, evaluation = 0;
+				choice = 2;
+				evaluation = 0;
 
 				while ((choice == 2) || (choice == 3))
 				{
@@ -489,7 +493,7 @@ long tcIsDeadlock(void)
 		    comp->GebrauchsArt + comp->Vase + comp->Delikates;
 
 		money += total / 15; /* im schlimmsten Fall bleibt Matt in */
-		/* etwa nur ein Fuenfzehnten           */
+		/* etwa nur ein Fueuenfzehnten           */
 
 		hasAll(Person_Marc_Smith, OLF_NORMAL, Object_Car);
 
@@ -1108,7 +1112,7 @@ void tcSabienInWalrus(void)
 	Say (STORY_1_TXT, 0, OLD_MATT_PICTID, "ST_3_OLD_0");
 	gfxShow (157, GFX_NO_REFRESH|GFX_ONE_STEP, 0, -1, -1);  /* Kiss */
 
-	inpSetWaitTicks(200);
+	inpSetWaitTicks(180);	// 200
 	inpWaitFor(INP_LBUTTONP|INP_TIME);
 	inpSetWaitTicks(0);
 
@@ -1257,9 +1261,9 @@ void tcDone7thBurglary(void)
 	if (bProfidisk)
 		AddTaxiLocation(81);     /* bulstrode  */
 
-	/* Jaguar kommt hier, da: 1. man barucht ihn fr Villa, */
-	/* 2. Jaguar wird in Fahndung nie erwischt (sonst k”nnte er nicht explodieren) */
-	/* 3. man soll Jaguar nicht zu lange haben k”nnen (da man nie erwischt wird  */
+	/* Jaguar kommt hier, da: 1. man braucht ihn fue\81r Villa, */
+	/* 2. Jaguar wird in Fahndung nie erwischt (sonst koennte er nicht explodieren) */
+	/* 3. man soll Jaguar nicht zu lange haben koennen (da man nie erwischt wird)  */
 
 	hasSet(Person_Marc_Smith, Car_Jaguar_XK_1950);
 
@@ -1438,7 +1442,7 @@ void tcDone9thBurglary(void)
 	if (Env->MattIsInLove)
 		AddTaxiLocation(61);     /* lisson */
 
-	/* nur mehr M”glichkeiten: gehen */
+	/* nur mehr Moeglichkeiten: gehen */
 	SetEnabledChoices(GO|WAIT);
 
 	GetScene(SCENE_FAHNDUNG)->Geschehen = 0;     /* damit nicht gleich Burglary 2 geschieht */
@@ -1513,7 +1517,7 @@ void tcDoneConfessingSabien(void)
 
 		Say (STORY_1_TXT,0,OLD_MATT_PICTID,"ST_19_OLD_0");
 
-		/* hier eventuell glckliche Anim zeigen! */
+		/* hier eventuell glueckliche Anim zeigen! */
 		gfxShow (164, GFX_NO_REFRESH|GFX_OVERLAY, 0, -1, -1);   /*  The End */
 
 		inpWaitFor (INP_LBUTTONP);
@@ -1664,7 +1668,7 @@ void tcDoneSouthhampton(void)
 	Environment Env = (Environment)dbGetObject(Environment_TheClou);
 
 	SceneArgs.Ueberschrieben = 1;
-	SceneArgs.ReturnValue    = 0; /* MUá SEIN! */
+	SceneArgs.ReturnValue    = 0; /* MUss SEIN! */
 
 	SetEnabledChoices(GP_ALL_CHOICES_ENABLED);
 
@@ -1678,7 +1682,7 @@ void tcDoneSouthhampton(void)
 		tcInitTowerBurglary();             /* wird absichtlich X mal aufgerufen - siehe weiter unten! */
 	}
 
-	/* mit Gehen oder Planen kommt man aus dem Men raus */
+	/* mit Gehen oder Planen kommt man aus dem Menue raus */
 	while((activ != 0) && (SceneArgs.ReturnValue==0))
 	{
 		inpTurnESC(0);
@@ -1821,7 +1825,7 @@ static void tcInitTowerBurglary(void)
 	car->MotorState = 255;
 	car->BodyWorkState = 180;
 	car->TyreState = 255;
-	car->Strike = 80;       /* extrem niedrig! (fr diesen Wagen) */
+	car->Strike = 80;       /* extrem niedrig! (fuer diesen Wagen) */
 
 	/* Organisatorisches! */
 	Organisation.CarID      = Car_Cadillac_Club_1952;
@@ -1867,7 +1871,7 @@ static long tcDoTowerBurglary(void)
 {
 	long burglary;
 
-	/* das Organisatorische muá hier wiederholt werden, da */
+	/* das Organisatorische muss hier wiederholt werden, da */
 	/* es sonst zu Fehler kommen kann, da die Organisation */
 	/* nicht abgespeichert wird!                           */
 	tcInitTowerBurglary();
@@ -1915,7 +1919,7 @@ void tcDoneKaserne(void)
 	car->MotorState = 255;
 	car->BodyWorkState = 180;
 	car->TyreState = 255;
-	car->Strike = 80;       /* extrem niedrig! (fr diesen Wagen) */
+	car->Strike = 80;       /* extrem niedrig! (fuer diesen Wagen) */
 
 	/* Organisatorisches! */
 	Organisation.CarID    = Car_Cadillac_Club_1952;
@@ -2014,7 +2018,7 @@ long tcIsLastBurglaryOk(void)
 	LSObject left  = (LSObject)dbGetObject(tcLAST_BURGLARY_LEFT_CTRL_OBJ);
 	LSObject right = (LSObject)dbGetObject(tcLAST_BURGLARY_RIGHT_CTRL_OBJ);
 
-	/* Links muá ein, Rechts muá ausgeschalten sein */
+	/* Links muss ein, Rechts muss ausgeschalten sein */
 	/* 1.. OFF!    */
 
 	if ((left->ul_Status & (1<<Const_tcON_OFF)))
@@ -2026,7 +2030,7 @@ long tcIsLastBurglaryOk(void)
 	if (!has(Person_Matt_Stuvysunt, Loot_Dokument))
 		madeIt = 0;
 
-	/* alle anderen mssen beim Auto sein... */
+	/* alle anderen muessen beim Auto sein... */
 	for (i = 1; i < 4; i++)
 		if ((Search.GuyXPos[i] < carXPos0) || (Search.GuyXPos[i] > carXPos1) ||
 			    (Search.GuyYPos[i] < carYPos0) || (Search.GuyYPos[i] > carYPos1))

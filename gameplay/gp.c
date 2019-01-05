@@ -663,7 +663,7 @@ void AddVTime(ulong add)
 		time = time % MINUTES_PER_DAY;
 	}
 
-	SetTime(time);
+	SetMinute(time);
 	tcTheAlmighty(time);
 }
 

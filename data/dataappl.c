@@ -9,7 +9,7 @@
 static long tcGetWeightOfNerves(long teamMood);
 static long tcIsConnectedWithEnabledAlarm(ulong lsoId);
 
-#define tcESCAPE_MOOD         30   /* ab hier flüchtet einer ! */
+#define tcESCAPE_MOOD         30   /* ab hier flüchtet einer ! */
 #define tcWALK_LOUDNESS       20
 #define tcPATROL_ALARM        5   /* ab 5 % veränderte Objekte schlägt Patrolie Alarm */
 
@@ -405,10 +405,10 @@ long tcGuyIsWaiting(ulong persId, long exhaustion)
  */
 /* bei jeder Warnung eines Aufpasser , wird dieser Wert nach unten */
 /* korrigiert */
-/* Rückgabewert steigt mit Zunahme der Zeit (Einbrecher werden immer
+/* Rückgabewert steigt mit Zunahme der Zeit (Einbrecher werden immer
 	selbstsicherer
 	und sinkt mit der Differenz der Realität zum Plan!
-	durch Funksprüche diesen Rückgabewert beeinflussen!
+	durch Funksprüche diesen Rückgabewert beeinflussen!
 */
 
 static long tcIsPlanPerfect(ulong timer)
@@ -504,7 +504,7 @@ static ulong tcGetNecessaryAbility(ulong persId, ulong toolId)
 	}
 
 /*
- * Berechnet Zeit, die Einbrecher für eine Aktion benötigt
+ * Berechnet Zeit, die Einbrecher für eine Aktion benötigt
  */
 
 ulong tcGuyUsesToolInPlayer(ulong persId, Building b, ulong toolId, ulong itemId, ulong needTime)
