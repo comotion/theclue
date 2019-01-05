@@ -130,19 +130,6 @@ void MemFree(void *mem, unsigned long size)
 	}
 }
 
-unsigned long MemAvail(void)
-{
-	unsigned long av = 0;
-	#ifdef WIN32
-	MEMORYSTATUS memStat;
-	GlobalMemoryStatus(&memStat);
-	av = memStat.dwAvailPhys;
-	#else
-	#error MemAvail() is not implemented
-	#endif
-	return(av);
-}
-
 long MemGetAllocated(void)
 {
 	return(l_MemAllocated);
