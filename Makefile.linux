@@ -1,0 +1,78 @@
+#
+# The Clue! Open Source Project
+# Makefile for linux by comotion
+#
+
+SDLDIR = /usr/include/SDL
+
+#========================================
+# Compiler
+#========================================
+CC = gcc
+CFLAGS = -O -I. -I$(SDLDIR) -g -m32
+
+#========================================
+# Linker
+#========================================
+LD = gcc
+LDFLAGS = -lSDL -lm -m32
+#LDFLG = -s -x
+
+#========================================
+# Remove
+#========================================
+RM = rm -fv
+
+#========================================
+# Linklibs
+#========================================
+#LIBS = /usr/lib/libSDLmain.a
+
+#========================================
+# Target
+#========================================
+PRG = theclue
+
+#========================================
+# Objects
+#========================================
+OBJS = sound/mxr.o sound/mxr_voc.o sound/mxr_wav.o sound/mxr_hsc.o sound/fx.o sound/newsound.o sound/fmopl.o \
+anim/sysanim.o base/base.o data/dataappl.o data/database.o data/datacalc.o data/relation.o \
+dialog/dialog.o dialog/talkappl.o disk/disk.o error/error.o gameplay/gp.o gameplay/gp_app.o \
+gameplay/loadsave.o gameplay/tcreques.o gfx/gfx.o gfx/gfxmcga.o gfx/gfxnch4.o inphdl/inphdl.o \
+landscap/access.o landscap/hardware.o landscap/init.o landscap/landscap.o landscap/raster.o \
+landscap/scroll.o landscap/spot.o list/list.o living/bob.o living/living.o memory/memory.o \
+organisa/organisa.o planing/graphics.o planing/guards.o planing/io.o planing/main.o \
+planing/planer.o planing/player.o planing/prepare.o planing/support.o planing/sync.o planing/system.o \
+present/interac.o present/present.o random/random.o scenes/cars.o scenes/dealer.o scenes/done.o \
+scenes/evidence.o scenes/inside.o scenes/invest.o scenes/scenes.o scenes/tools.o \
+story/story.o text/text.o \
+port/port.o intro/intro.o intro/iffanim.o gfx/filter.o cdrom/cdrom.o SDL_linux_main.o
+
+#========================================
+# 'Make all' rule
+#========================================
+all: $(PRG)
+
+#========================================
+# Compiler rule
+#========================================
+#.c.o:
+#	$(CC) $(CFLAGS) $(CINCS) $< -o $@
+
+#========================================
+# Linker rule
+#========================================
+
+$(PRG): $(OBJS)
+	$(LD) $(OBJS) $(LIBS) -o $@ $(LDFLAGS) 
+
+#========================================
+# 'Make clean' rule
+#========================================
+clean:
+	$(RM) $(OBJS) $(PRG)
+
+#========================================
+# Dependencies
+#========================================
