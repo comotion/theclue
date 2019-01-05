@@ -6,6 +6,7 @@
 */
 #include "disk/disk.h"
 #include "disk/disk_e.h"
+#include <ctype.h>
 
 char RootPathName[256];
 
@@ -27,7 +28,7 @@ FILE *dskOpen(const char *puch_Pathname, const char *puch_Mode, uword us_DiskId)
 
 	us_DiskId = 0; /* just to have no warnings */
 
-	//Log("%s|%s: %s(%s)", __FILE__, __func__, puch_Pathname, puch_Mode);
+	Log("%s|%s: %s(%s)", __FILE__, __func__, puch_Pathname, puch_Mode);
 
 	if (!(p_File = fopen(puch_Pathname, puch_Mode)))
 	{
@@ -54,9 +55,19 @@ long dskLoad(const char *puch_Pathname, void *p_MemDest, uword us_DiskId)
 	return(0);
 }
 
+static void pathToUpper(char *path)
+{
+	while(*path) {
+		*path = toupper(*path);
+		path++;
+	}
+}
+
 void dskBuildPathName(const char *puch_Directory, const char *puch_Filename, char *puch_Result)
 {
+	Log("build path: %s/%s/%s\n", RootPathName, puch_Directory, puch_Filename);
 	sprintf(puch_Result, "%s/%s/%s", RootPathName, puch_Directory, puch_Filename);
+	pathToUpper(puch_Result);
 }
 
 long dskFileLength (const char *puch_Pathname)

@@ -96,7 +96,7 @@ static ubyte detectLanguage(void)
 	    char fileWithPath[TXT_KEY_LENGTH];
 	    FILE *p_File;
 
-	    sprintf(fileName,"tcmaine%c.txt", languageMark[count]);
+	    sprintf(fileName,MAIN_DATA_NAME "E%c.TXT", languageMark[count]);
 	    dskBuildPathName(TEXT_DIRECTORY, fileName, fileWithPath);
 	    if (p_File = fopen(fileWithPath, "r"))
 	    {

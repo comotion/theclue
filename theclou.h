@@ -71,17 +71,17 @@ extern char bCDRom;
  *
  */
 
-#define LOCATIONS_TXT		"location.lst"
-#define COLL_LIST_TXT		"coll.lst"
-#define PICT_LIST_TXT		"pict.lst"
-#define GAMES_LIST_TXT		"games.lst"
-#define GAMES_ORIG_TXT		"origin.lst"
+#define LOCATIONS_TXT		"LOCATION.LST"
+#define COLL_LIST_TXT		"COLL.LST"
+#define PICT_LIST_TXT		"PICT.LST"
+#define GAMES_LIST_TXT		"GAMES.LST"
+#define GAMES_ORIG_TXT		"ORIGIN.LST"
 
-#define LIV_ANIM_TEMPLATE_LIST	"Template.lst"
-#define LIV_LIVINGS_LIST		"livings.lst"
+#define LIV_ANIM_TEMPLATE_LIST	"TEMPLATE.LST"
+#define LIV_LIVINGS_LIST		"LIVINGS.LST"
 
-#define SND_SOUND_LIST			"sounds.list"
-#define SND_SOUND_DIRECTORY		"sounds"
+#define SND_SOUND_LIST			"SOUNDS.LIST"
+#define SND_SOUND_DIRECTORY		"SOUNDS"
 
 /*
  * Namen der anderen Dateien
@@ -90,8 +90,8 @@ extern char bCDRom;
  *
  */
 
-#define STORY_DAT 		"TCStory.pc"
-#define STORY_DAT_DEMO	"TCStory.dem"
+#define STORY_DAT 		"TCSTORY.PC"
+#define STORY_DAT_DEMO	"TCSTORY.DEM"
 
 /*
  * Nummern der Textdateien in denen die Menues stehen
@@ -129,23 +129,23 @@ extern char bCDRom;
  *
  */
 
-#define PICTURE_DIRECTORY	"pictures"
-#define TEXT_DIRECTORY		"texts"
+#define PICTURE_DIRECTORY	"PICTURES"
+#define TEXT_DIRECTORY		"TEXTS"
 #define INCLUDE_DIRECTORY	"Include"
-#define DATA_DIRECTORY		"data"
-#define SOUND_DIRECTORY 	"sounds"
-#define SAMPLES_DIRECTORY	"samples"
-#define AUDIO_DIRECTORY		"audio"
+#define DATA_DIRECTORY		"DATA"
+#define SOUND_DIRECTORY 	"SOUNDS"
+#define SAMPLES_DIRECTORY	"SAMPLES"
+#define AUDIO_DIRECTORY		"AUDIO"
 
-#define DATADISK			"datadisk"
+#define DATADISK			"DATADISK"
 
-#define BUILD_DATA_NAME 	"tcbuild"
-#define MAIN_DATA_NAME		"tcmain"
-#define GAME_DATA_EXT		".dat"
-#define GAME_REL_EXT 		".rel"
-#define TAXI_LOC_EXT 		".loc"
+#define BUILD_DATA_NAME 	"TCBUILD"
+#define MAIN_DATA_NAME		"TCMAIN"
+#define GAME_DATA_EXT		".DAT"
+#define GAME_REL_EXT 		".REL"
+#define TAXI_LOC_EXT 		".LOC"
 
-#define STORY_DATA_NAME 	"tcstory"
+#define STORY_DATA_NAME 	"TCSTORY"
 
 /*
  * defines fueÅr Error Modul
