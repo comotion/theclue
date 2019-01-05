@@ -4,8 +4,8 @@
   \___/\____/___/_/ http://cosp.sourceforge.net
    Based on the original by neo Software GmbH
 */
-#include "disk\disk.h"
-#include "disk\disk_e.h"
+#include "disk/disk.h"
+#include "disk/disk_e.h"
 
 char RootPathName[256];
 
@@ -56,7 +56,7 @@ long dskLoad(const char *puch_Pathname, void *p_MemDest, uword us_DiskId)
 
 void dskBuildPathName(const char *puch_Directory, const char *puch_Filename, char *puch_Result)
 {
-	sprintf(puch_Result, "%s\\%s\\%s", RootPathName, puch_Directory, puch_Filename);
+	sprintf(puch_Result, "%s/%s/%s", RootPathName, puch_Directory, puch_Filename);
 }
 
 long dskFileLength (const char *puch_Pathname)

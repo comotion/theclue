@@ -5,21 +5,21 @@
    Based on the original by neo Software GmbH
 */
 #include "SDL.h"
-#include "gfx\gfx.h"
+#include "gfx/gfx.h"
 
 #ifndef MODULE_MEMORY
-#include "memory\memory.h"
+#include "memory/memory.h"
 #endif
 #ifndef MODULE_BASE
-#include "base\base.h"
+#include "base/base.h"
 #endif
 #ifndef MODULE_TEXT
-#include "text\text.h"
+#include "text/text.h"
 #endif
 
-#include "gfx\gfx_p.h"
-#include "gfx\filter.h"
-#include "port\port.h"
+#include "gfx/gfx_p.h"
+#include "gfx/filter.h"
+#include "port/port.h"
 
 /************************************************/
 
@@ -78,7 +78,7 @@ void gfxScreenshot(void)
 	static int screenshotsTaken = 0;
 	char fileName[256];
 
-	sprintf(fileName, ".\\screenshot%02d.bmp", screenshotsTaken + 1);
+	sprintf(fileName, "./screenshot%02d.bmp", screenshotsTaken + 1);
 	if (!SDL_SaveBMP(SurfaceScreen, fileName)) {
 		screenshotsTaken++;
 	}

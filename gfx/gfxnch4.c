@@ -4,7 +4,7 @@
   \___/\____/___/_/ http://cosp.sourceforge.net
    Based on the original by neo Software GmbH
 */
-#include "gfx\gfx.h"
+#include "gfx/gfx.h"
 
 static int ScrX = 0, ScrY = 0;
 

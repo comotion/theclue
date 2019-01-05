@@ -10,7 +10,7 @@
 #include "theclou.h"
 
 #ifndef MODULE_LIST
-#include "list\list.h"
+#include "list/list.h"
 #endif
 
 extern int gfxScalingOffsetX;
@@ -223,7 +223,7 @@ extern void gfxILBMToRAW(ubyte *p_Source, ubyte *p_Dest);
 #define MODULE_GFXMCGA
 
 #ifndef MODULE_INPHDL
-#include "inphdl\inphdl.h"
+#include "inphdl/inphdl.h"
 #endif
 
 extern void gfxMCGAPrintExact(struct RastPort *rp, char *puch_Text, uword us_X, uword us_Y);
