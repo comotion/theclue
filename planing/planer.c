@@ -781,6 +781,28 @@ static void plCorrectToolsList(ulong flags)
 	dbRemObjectNode(ObjectList, Tool_Schutzanzug);
 }
 
+static void filterUsableTools(ulong item)
+{
+	struct ObjectNode *n;
+   for (n = (struct ObjectNode *)LIST_HEAD(ObjectList); NODE_SUCC(n); n = (struct ObjectNode *)NODE_SUCC(n))
+	{
+		if(!n){
+			printf("no node!\n");
+			return;
+		}
+        ulong person = OL_NR(GetNthNode(PersonsList, CurrentPerson));
+        Building building = (Building)dbGetObject(Planing_BldId);
+        ulong tool = n->nr;
+        ulong itemtype =  ((LSObject)dbGetObject(item))->Type;
+		if (! tcGuyUsesTool(person, building, tool, itemtype)) {
+			NODE *next = NODE_PRED(n);
+			RemNode(n);
+			FreeNode(n);
+			n = (struct ObjectNode *) next;
+		}
+	}
+}
+
 static void plActionUse(void)
 {
 	LIST *actionList = plGetObjectsList(CurrentPerson, 0);
@@ -923,6 +945,7 @@ static void plActionUse(void)
 									ObjectListSuccString = NULL;
 									UseObject            = 0L;
 
+									filterUsableTools(choice1);
 									txtGetFirstLine(PLAN_TXT, "EXPAND_ALL", exp);
 									ExpandObjectList(ObjectList, exp);
 
