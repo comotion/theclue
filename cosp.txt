@@ -12,6 +12,7 @@ Graphics:        Markus Hudolin
 Story:           Karam Nada
 Sound & music:   Hannes Seifert
 
+Linux port:      Kacper Wysocki (comotion)
 SDL conversion:  Oliver Gantert (LucyG)
 Contributions:   Baris Elmas (devkid82)
                  Ronny Thiemann (templer)
@@ -31,6 +32,10 @@ license contained in the included 'mame.txt' file.
 ================================================================================
   CHANGES/FIXES
 ================================================================================
+
+v0.8 (2019-01-05)
+- linux port
+- list only usable tools during planning
 
 v0.7a (2018-09-26)
 - fix: repainting car shows wrong colors
